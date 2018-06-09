@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "first-ng-element": {
+    "angular-element-starter": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -36,7 +36,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/first-ng-element",
+            "outputPath": "build/angular-element-starter",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -46,9 +46,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/material.scss",
+              "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -73,18 +78,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "first-ng-element:build"
+            "browserTarget": "angular-element-starter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "first-ng-element:build:production"
+              "browserTarget": "angular-element-starter:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "first-ng-element:build"
+            "browserTarget": "angular-element-starter:build"
           }
         },
         "test": {
@@ -95,7 +100,8 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.scss"
+              "src/styles/material.scss",
+              "src/styles/styles.scss"
             ],
             "scripts": [],
             "assets": [
@@ -118,7 +124,7 @@
         }
       }
     },
-    "first-ng-element-e2e": {
+    "angular-element-starter-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -126,7 +132,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "first-ng-element:serve"
+            "devServerTarget": "angular-element-starter:serve"
           }
         },
         "lint": {
@@ -141,5 +147,5 @@
       }
     }
   },
-  "defaultProject": "first-ng-element"
+  "defaultProject": "angular-element-starter"
 }
