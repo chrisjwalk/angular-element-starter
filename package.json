@@ -1,6 +1,13 @@
 {
   "name": "angular-element-starter",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "author": {
+    "name": "Christopher J. Walker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrisjwalk/angular-element-starter"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -14,7 +21,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^6.0.4",
     "@angular/common": "^6.0.4",

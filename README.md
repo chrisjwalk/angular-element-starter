@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Publish + Serve
 
-Run `npm run publish`. App with do a prod build and bundle output files into `dist/` directory. Run `npm run serve:dist` to start a local server.
+Run `npm run publish`. App will do a prod build and bundle output files into `dist/` directory. Run `npm run serve:dist` to start a local server.
 
 ## Code scaffolding
 
