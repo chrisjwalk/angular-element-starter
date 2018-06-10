@@ -1,10 +1,14 @@
-# FirstNgElement
+# angular-element-starter
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Publish + Serve
+
+Run `npm run publish`. App with do a prod build and bundle output files into `dist/` directory. Run `npm run serve:dist` to start a local server.
 
 ## Code scaffolding
 

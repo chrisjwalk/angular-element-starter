@@ -1,10 +1,11 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
+var inject = require('gulp-inject');
 const appName = 'angular-element-starter';
 const distFolder = './dist/';
 const buildFolder = './build/' + appName + '/';
-const indexTemplate = './src/assets/index.html';
+const indexTemplate = './src/index.html';
 
 const buildFiles = [
   buildFolder + 'runtime*.js',
@@ -28,8 +29,26 @@ gulp.task('rename', function () {
 });
 
 gulp.task('move-index', function () {
-  return gulp.src(indexTemplate)
+  const target = gulp.src(indexTemplate);
+  var sources = gulp.src([distFolder + '*.js', distFolder + '*.css'], {
+    read: false
+  });
+  return target
+    .pipe(inject(sources, {
+      removeTags: true,
+      transform: function (filepath) {
+        return inject.transform.apply(inject.transform, arguments).replace('/dist', '');
+      }
+    }))
     .pipe(gulp.dest(distFolder));
 });
 
-gulp.task('default', ['concat', 'rename', 'move-index']);
+gulp.task('move-assets', function () {
+  return gulp.src([buildFolder + '/assets/**', buildFolder + '*.ico'], {
+    base: buildFolder
+  }).pipe(gulp.dest(distFolder));
+});
+
+gulp.task('bundle', ['concat', 'rename']);
+gulp.task('publish', ['move-index', 'move-assets']);
+gulp.task('default', ['bundle', 'publish']);
