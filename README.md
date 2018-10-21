@@ -10,6 +10,10 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Run `npm run publish`. App will do a prod build and bundle output files into `dist/` directory. Run `npm run serve:dist` to start a local server.
 
+## Build shared components library
+
+Run `npm run build:library` to build the "shared-components" library. This will create an npm package that can be used to import components into another Angular project.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

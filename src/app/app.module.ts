@@ -1,12 +1,13 @@
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
+import { MatButtonModule, MatCardModule, MatGridListModule, MatIconModule, MatMenuModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { HelloElementComponent } from './hello-element/hello-element.component';
-import { GoodbyeElementComponent } from './goodbye-element/goodbye-element.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedComponentsModule, SharedComponentsComponent } from 'projects/shared-components';
+
 import { DashboardElementComponent } from './dashboard-element/dashboard-element.component';
-import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { GoodbyeElementComponent } from './goodbye-element/goodbye-element.component';
+import { HelloElementComponent } from './hello-element/hello-element.component';
 
 @NgModule({
   imports: [
@@ -16,17 +17,18 @@ import { MatGridListModule, MatCardModule, MatMenuModule, MatIconModule, MatButt
     MatCardModule,
     MatMenuModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    SharedComponentsModule,
   ],
   declarations: [
     HelloElementComponent,
     GoodbyeElementComponent,
-    DashboardElementComponent
+    DashboardElementComponent,
   ],
   entryComponents: [
     HelloElementComponent,
     GoodbyeElementComponent,
-    DashboardElementComponent
+    DashboardElementComponent,
   ],
 })
 export class AppModule {
@@ -38,5 +40,6 @@ export class AppModule {
     customElements.define('app-hello', createCustomElement(HelloElementComponent, injector));
     customElements.define('app-goodbye', createCustomElement(GoodbyeElementComponent, injector));
     customElements.define('app-dashboard', createCustomElement(DashboardElementComponent, injector));
+    customElements.define('lib-shared', createCustomElement(SharedComponentsComponent, injector));
    }
 }

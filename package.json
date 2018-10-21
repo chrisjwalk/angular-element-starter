@@ -13,6 +13,8 @@
     "start": "ng serve",
     "build": "ng build",
     "build:prod": "npm run build -- --prod",
+    "build:library": "npm run clean:library && ng build shared-components",
+    "clean:library": "rimraf ./dist/shared-components",
     "clean:dist": "rimraf ./dist",
     "publish": "npm run clean:dist && npm run build:prod && npm run gulp bundle && npm run gulp publish",
     "serve:dist": "lite-server",
@@ -43,6 +45,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.10.0",
+    "@angular-devkit/build-ng-packagr": "~0.10.0",
     "@angular/cli": "~7.0.2",
     "@angular/compiler-cli": "^7.0.0",
     "@angular/language-service": "^7.0.0",
@@ -62,9 +65,12 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^1.3.1",
     "lite-server": "^2.4.0",
+    "ng-packagr": "^4.2.0",
     "protractor": "~5.4.1",
     "rimraf": "^2.6.2",
     "ts-node": "^7.0.1",
+    "tsickle": ">=0.29.0",
+    "tslib": "^1.9.0",
     "tslint": "^5.10.0",
     "typescript": "~3.1.3"
   }

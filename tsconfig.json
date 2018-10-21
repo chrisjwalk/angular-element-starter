@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "shared-components": [
+        "dist/shared-components"
+      ],
+      "shared-components/*": [
+        "dist/shared-components/*"
+      ]
+    }
   }
 }
