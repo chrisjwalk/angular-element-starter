@@ -1,19 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedComponentsService } from 'projects/shared-components/src/lib/services/shared-components.service';
 
 @Component({
   selector: 'lib-shared-components',
-  template: `
-    <p>
-      shared-components works!
-    </p>
-  `,
-  styles: []
+  templateUrl: './shared-components.component.html',
+  styleUrls: ['./shared-components.component.scss']
 })
 export class SharedComponentsComponent implements OnInit {
-
-  constructor() { }
+  data: any[];
+  constructor(private dataService: SharedComponentsService) { }
 
   ngOnInit() {
+    this.data = this.dataService.getData();
   }
-
 }
