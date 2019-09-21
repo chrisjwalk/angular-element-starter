@@ -8,12 +8,13 @@ const buildFolder = './build/' + appName + '/';
 const indexTemplate = './src/index.html';
 
 const buildFiles = [
-  buildFolder + 'runtime*.js',
-  buildFolder + 'polyfills*.js',
-  buildFolder + 'styles*.js',
+  // buildFolder + 'polyfills-es5*.js',
+  buildFolder + 'polyfills-es2015*.js',
   buildFolder + 'scripts*.js',
-  buildFolder + 'vendor*.js',
-  buildFolder + 'main*.js'
+  buildFolder + 'runtime-es2015*.js',
+  buildFolder + 'main-es2015*.js',
+  // buildFolder + 'runtime-es5*.js',
+  // buildFolder + 'main-es5*.js'
 ];
 
 gulp.task('concat', function () {
